@@ -35,6 +35,8 @@ public class Game {
 
             System.out.println(movieToGuess.name);
             System.out.println(movieToGuess.hideLetters());
+            movieToGuess.getLetters();
+            System.out.println(movieToGuess.letters);
 //            System.out.println(movieToGuess.letters);
 //            Arrays.toString(movieToGuess.letters);
 
