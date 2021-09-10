@@ -4,21 +4,21 @@ public class Movie {
     // fields
     String name;
     Character[] letters;// = new Character[50];
+    String hidden ="";
 
-    String hideLetters(){
-        String hidden = "";
+    void hideLetters(){
         for (int i=0; i< this.name.length(); i++){
             hidden += "_";
         }
-        return hidden;
+
     }
 
     void getLetters(){
         this.letters = new Character[this.name.length()];
-        System.out.println(this.name.length());
+//        System.out.println(this.name.length());
         for (int i=0; i< this.name.length(); i++){
-            System.out.println(this.name.charAt(i));
-            System.out.println(i);
+//            System.out.println(this.name.charAt(i));
+//            System.out.println(i);
             this.letters[i] =this.name.charAt(i);
         }
     }

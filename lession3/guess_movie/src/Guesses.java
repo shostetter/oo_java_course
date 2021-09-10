@@ -1,30 +1,27 @@
-import java.util.Arrays;
-
 public class Guesses {
-    int guessesLeft;
-    String hiddenWord;
-    Character[] letters;// = new Character[50];
-    String name;
+    String movieName;
+    String hiddenname;
 
-    Guesses(Movie movie){
-        guessesLeft=10;
-        letters = movie.letters;
-        name = movie.name;
-        hiddenWord = movie.hideLetters();
+    public void addGuesses(Movie movie){
+        this.movieName = movie.name;
+        this.hiddenname = movie.hidden;
     }
-    void upateHidden(String inputGuess){
-        int index = name.indexOf(inputGuess);
-        while (index >= 0) {
-            System.out.println(index);
-            index = name.indexOf(inputGuess, index + 1);
-            System.out.println(index);
-        }
-    }
-    void guess(char inputGuess){
-        boolean found = Arrays.asList(letters).contains(inputGuess);
-        if (found){
 
+    public int checkGuess(String letter){
+        // todo: add logic for if the letter appears more than once
+        return movieName.indexOf(letter); // this returns index of letter;
+    }
+
+    public void updateHidden(String letter){
+        int index = checkGuess(letter);
+        // if letter in name update hidden
+        if (index > 0) {
+            this.hiddenname = this.hiddenname.substring(0, index) + letter + this.hiddenname.substring(index + 1);
         }
     }
 
+    public String guess(String letter){
+        updateHidden(letter);
+        return hiddenname;
+    }
 }
