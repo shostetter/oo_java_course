@@ -21,22 +21,24 @@ public class Game {
         if (file.exists()) {
             movie = ReadFile.pickMovie(file);
             guesses.addGuesses(movie);
-            System.out.println(guesses.movieName);
+
 
             // print testing that readfile worked
-            System.out.println(movie.name);
-            System.out.println(movie.hidden);
+            System.out.println(guesses.movieName); // to be manipulated
+            System.out.println(guesses.hiddenname);
+//            System.out.println(movie.name); // orginal
+//            System.out.println(movie.hidden);
         }
         // read in user input
         Scanner inScanner = new Scanner(System.in); // new scanner inst
-
-
-//        System.out.println(guesses.movieName);
 
         for (int i = 10; i > 0; i--) {
             System.out.println("Guess a letter\nYou have " + i + " guesses remaining...");
             String guess = inScanner.nextLine();
             System.out.println(guess);
+
+            String current = guesses.guess(guess);
+            System.out.println(current);
 
         }
 
