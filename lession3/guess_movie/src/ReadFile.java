@@ -26,6 +26,7 @@ public class ReadFile {
 
         Movie movieToGuess = movieList.searchMovieByIndex(randomNumber);
         System.out.println("Found "+ movies + " in file");
+        movieToGuess.hideLetters();
         return movieToGuess;
         }
 }

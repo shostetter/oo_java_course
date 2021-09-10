@@ -4,10 +4,9 @@ public class Movie {
     // fields
     String name;
     Character[] letters;// = new Character[50];
-    String hidden;
+    String hidden ="";
 
     void hideLetters(){
-        String hidden = "";
         for (int i=0; i< this.name.length(); i++){
             hidden += "_";
         }

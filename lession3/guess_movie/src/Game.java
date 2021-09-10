@@ -11,28 +11,34 @@ import java.util.Arrays;
 
 public class Game {
 
-    public static void main(String [] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         Movie movie;
+        Guesses guesses = new Guesses();
+
+
         // set input file src
         File file = new File("movies.txt");
         if (file.exists()) {
             movie = ReadFile.pickMovie(file);
+            guesses.addGuesses(movie);
+            System.out.println(guesses.movieName);
 
             // print testing that readfile worked
             System.out.println(movie.name);
             System.out.println(movie.hidden);
-//            System.out.println(movie.letters);
         }
-//            // read in user input
-//            Scanner inScanner = new Scanner(System.in); // new scanner inst
-//            for (int i = 10; i > 0; i--) {
-//                System.out.println("You have "+i+" guesses remaining...");
-//                String guess = inScanner.nextLine();
-//                System.out.println(guess+"...");
-//                boolean found = Arrays.asList(movie.letters).contains(guess.charAt(0));
-//                System.out.println(found);
-//                System.out.println(movie.letters);
+        // read in user input
+        Scanner inScanner = new Scanner(System.in); // new scanner inst
 
-            }
+
+//        System.out.println(guesses.movieName);
+
+        for (int i = 10; i > 0; i--) {
+            System.out.println("Guess a letter\nYou have " + i + " guesses remaining...");
+            String guess = inScanner.nextLine();
+            System.out.println(guess);
 
         }
+
+    }
+}
