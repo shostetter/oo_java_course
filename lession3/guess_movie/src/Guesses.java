@@ -29,4 +29,11 @@ public class Guesses {
         updateHidden(letter);
         return hiddenname;
     }
+
+    public Boolean guessFullName(String title){
+        for (int i=0; i<title.length(); i++){
+            guess(String.valueOf(title.charAt(i)));
+        }
+        return finished();
+    }
 }
