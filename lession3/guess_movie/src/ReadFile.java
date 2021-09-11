@@ -24,7 +24,7 @@ public class ReadFile {
         int randomNumber = (int) (Math.random() * movies) + 1;
 
         Movie movieToGuess = movieList.searchMovieByIndex(randomNumber);
-        System.out.println("Found "+ movies + " in file");
+//        System.out.println("Found "+ movies + " in file");
         movieToGuess.hideLetters();
         return movieToGuess;
         }

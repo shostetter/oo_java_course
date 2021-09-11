@@ -17,7 +17,14 @@ public class Guesses {
             index = this.movieName.indexOf(letter, index + 1);
         }
     }
-
+    public Boolean finished(){
+        int index = this.hiddenname.indexOf("_");
+        if (index<0){
+            return true;
+        }else {
+            return false;
+        }
+    }
     public String guess(String letter){
         updateHidden(letter);
         return hiddenname;
