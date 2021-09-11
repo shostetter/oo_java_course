@@ -1,20 +1,11 @@
 import java.util.Scanner;
 import java.io.File;
-import java.util.Arrays;
-
-
-//game runs main process
-//movie should store attributes of movie
-//guess should manipulate movie and hold most of the real functionallity
-
-
 
 public class Game {
-
     public static void main(String[] args) throws Exception {
         Movie movie;
         Guesses guesses = new Guesses();
-
+        Boolean correct = false;
 
         // set input file src
         File file = new File("movies.txt");
@@ -22,25 +13,33 @@ public class Game {
             movie = ReadFile.pickMovie(file);
             guesses.addGuesses(movie);
 
-
             // print testing that readfile worked
-            System.out.println(guesses.movieName); // to be manipulated
+//            System.out.println(guesses.movieName); // to be manipulated
+            System.out.println("Here is a movie title, can you guess the letters in the name?");
             System.out.println(guesses.hiddenname);
-//            System.out.println(movie.name); // orginal
-//            System.out.println(movie.hidden);
+
         }
         // read in user input
         Scanner inScanner = new Scanner(System.in); // new scanner inst
 
-        for (int i = 10; i > 0; i--) {
+        int i = 10;
+        while (i>0){
             System.out.println("Guess a letter\nYou have " + i + " guesses remaining...");
             String guess = inScanner.nextLine();
-            System.out.println(guess);
-
+            // update hidden with guess
             String current = guesses.guess(guess);
             System.out.println(current);
-
+            i--;
+            // check if name is complete
+            correct = guesses.finished();
+            if (correct){
+                i=0;
+            }
         }
-
+        if (!correct) {
+            System.out.println("No guesses left. You loose.");
+        }else {
+            System.out.println("You guessed correct. You win!");
+        }
     }
 }
