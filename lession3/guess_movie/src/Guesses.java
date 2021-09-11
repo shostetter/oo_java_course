@@ -7,16 +7,14 @@ public class Guesses {
         this.hiddenname = movie.hidden;
     }
 
-    public int checkGuess(String letter){
-        // todo: add logic for if the letter appears more than once
-        return movieName.indexOf(letter); // this returns index of letter;
-    }
-
     public void updateHidden(String letter){
-        int index = checkGuess(letter);
-        // if letter in name update hidden
-        if (index > 0) {
+        int index = this.movieName.indexOf(letter);
+        while (index >= 0) {
+//            System.out.println(index);
+            // update hidden string with letters in correct locations
             this.hiddenname = this.hiddenname.substring(0, index) + letter + this.hiddenname.substring(index + 1);
+            // reset index for multiple occurrences of letter
+            index = this.movieName.indexOf(letter, index + 1);
         }
     }
 

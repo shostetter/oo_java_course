@@ -26,8 +26,10 @@ public class Game {
             // print testing that readfile worked
             System.out.println(guesses.movieName); // to be manipulated
             System.out.println(guesses.hiddenname);
-//            System.out.println(movie.name); // orginal
-//            System.out.println(movie.hidden);
+
+            // original movie obj attributes
+            // System.out.println(movie.name);
+            // System.out.println(movie.hidden);
         }
         // read in user input
         Scanner inScanner = new Scanner(System.in); // new scanner inst

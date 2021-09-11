@@ -8,7 +8,12 @@ public class Movie {
 
     void hideLetters(){
         for (int i=0; i< this.name.length(); i++){
-            hidden += "_";
+            if(Character.isWhitespace(name.charAt(i))) {
+                System.out.println("found space at " + i);
+                hidden += " ";
+            } else {
+                hidden += "_";
+            }
         }
 
     }

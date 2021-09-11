@@ -2,6 +2,8 @@ import java.util.Scanner;
 import java.io.File;
 
 public class ReadFile {
+//    Read the movies txt file with all of the movie titles
+//    pick one at random and return for use by guess game
 
     public static Movie pickMovie(File file) throws Exception {
         MovieList movieList = new MovieList();
@@ -20,7 +22,6 @@ public class ReadFile {
         }
 
         int randomNumber = (int) (Math.random() * movies) + 1;
-//            System.out.println("The input file has " + movies + " movies");
 
         Movie movieToGuess = movieList.searchMovieByIndex(randomNumber);
         System.out.println("Found "+ movies + " in file");
