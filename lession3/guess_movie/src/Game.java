@@ -36,6 +36,10 @@ public class Game {
                     i = 0;
                 }
             } else {
+                while (guess.length()>1){
+                    System.out.println("Only single letters allowed, please guess again.");
+                    guess = inScanner.nextLine();
+                }
                 // update hidden with guess
                 String current = guesses.guess(guess);
                 System.out.println(current);
