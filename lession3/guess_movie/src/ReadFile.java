@@ -6,10 +6,9 @@ public class ReadFile {
     public static Movie pickMovie(File file) throws Exception {
         MovieList movieList = new MovieList();
         // read input file
-        // Todo: move this to seperate class
-
         Scanner scanner = new Scanner(file);
-        int movies = 0;
+        int movies = 0; // count of movies in input file
+
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine(); // each line in input file
             Movie movie = new Movie();
@@ -17,7 +16,6 @@ public class ReadFile {
 
             // Set the title and array of chars
             movie.name = line;
-            movie.getLetters();
             movies += 1;
         }
 
