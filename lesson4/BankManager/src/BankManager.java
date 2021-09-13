@@ -1,4 +1,5 @@
-import java.util.Calendar;
+import java.util.Date;
+
 
 public class BankManager {
     public static void main(String[] args) {
@@ -16,6 +17,8 @@ public class BankManager {
 
         cod.account="test3";
         cod.balence= 10;
+        cod.expires = new Date(2021, 9, 13);
+
 
         System.out.println(checking.account);
         System.out.println(checking.balence);
@@ -24,6 +27,8 @@ public class BankManager {
         System.out.println(savings.account);
         System.out.println(savings.balence);
         System.out.println(savings.rate);
+
+        System.out.println(cod.expires);
     }
 }
 
