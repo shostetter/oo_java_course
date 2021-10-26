@@ -29,4 +29,19 @@ public class U1 extends Rocket{
             return true;
         }
     }
+
+    public boolean launch(){
+        Random randomNumber = new Random();
+        double rand = randomNumber.nextDouble();
+        double launchProb = (weight / maxWeight) * 0.05;
+
+        if (launchProb >= rand) {
+            System.out.println("U-1 exploded!");
+            return false;
+        } else {
+            System.out.println("U-1 launched");
+            return true;
+        }
+
+    }
 }
