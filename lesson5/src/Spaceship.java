@@ -7,8 +7,11 @@ public interface Spaceship {
     //    carry: a method that also takes an Item object and updates the current weight of the rocket.
 
     boolean launch();
+
     boolean land();
+
     boolean canCarry(Item item);
+
     void carry(Item item);
 
 }
